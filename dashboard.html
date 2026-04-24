@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Monalisa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">Monalisa</div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+       
+    </nav>
+
+   <button onclick="logout()" class="btn-outline">Sair</button>
+   
+</div>
+    </div>
+</header>
+
+<div class="dashboard">
+
+    <!-- TEXTO -->
+    <div class="card">
+        <h2>Texto de Entrada</h2>
+        <textarea id="inputTexto"></textarea>
+
+        <input type="file" id="fileInput" accept=".txt,.pdf,.docx">
+
+        <div class="actions">
+            <button onclick="gerarResenha()" class="btn-primary">Gerar</button>
+            <button onclick="limparTexto()" class="btn-outline">Limpar</button>
+        </div>
+    </div>
+
+    <!-- RESENHA -->
+    <div class="card">
+        <h2>Resenha Gerada</h2>
+        <div id="resultado">A resenha aparecerá aqui...</div>
+    </div>
+
+    <!-- ANALISE -->
+    <div class="card">
+        <h2>Análise Inteligente</h2>
+        <div id="analise">A análise aparecerá aqui...</div>
+    </div>
+
+    <!-- PLAGIO -->
+    <div class="card">
+        <h2>Risco de Plágio</h2>
+        <div id="plagio">O resultado aparecerá aqui...</div>
+    </div>
+
+    <!-- EDITOR FINAL -->
+    <div class="card full-width">
+        <h2>Editor Final</h2>
+        <textarea id="editorTexto"></textarea>
+
+        <div class="actions">
+            <button onclick="copiarTexto()" class="btn-primary">Copiar</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+
+</body>
+</html>
