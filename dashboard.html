@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Monalisa AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- 🔒 PROTEÇÃO -->
+<script>
+const usuario = JSON.parse(localStorage.getItem("usuario") || "null");
+
+if (!usuario || !usuario.logado) {
+  window.location.href = "login.html";
+}
+</script>
+
+<header class="navbar">
+    <div class="logo">Monalisa AI</div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+    </nav>
+
+    <button onclick="logout()" class="btn-outline">Sair</button>
+</header>
+
+<div class="dashboard">
+
+    <!-- TEXTO ORIGINAL -->
+    <div class="card">
+        <h2>Texto Original</h2>
+
+        <textarea id="inputText" placeholder="Cole seu texto aqui..."></textarea>
+
+        <input type="file" id="fileInput" accept=".txt,.pdf,.docx">
+        <button onclick="carregarArquivo()">Carregar Arquivo</button>
+
+        <div class="actions">
+            <button onclick="gerarResenha()">Gerar Texto</button>
+            <button onclick="limparInput()">Limpar</button>
+        </div>
+    </div>
+
+    <!-- RESULTADO -->
+    <div class="card">
+        <h2>Texto Final</h2>
+
+        <div id="resultado" contenteditable="true">
+            O texto gerado aparecerá aqui...
+        </div>
+
+        <div class="actions">
+            <button onclick="copiarResultado()">Copiar</button>
+            <button onclick="refinarTexto()">Refinar Versão Final</button>
+        </div>
+    </div>
+
+    <!-- ANÁLISE -->
+    <div class="card">
+        <h2>Análise de Qualidade</h2>
+
+        <p>Originalidade Estimada: <span id="scoreOriginalidade">--</span></p>
+        <p>Similaridade Estimada: <span id="scorePlagio">--</span></p>
+        <p>Clareza: <span id="scoreClareza">--</span></p>
+         <button onclick="analisarQualidade()" class="btn-primary">
+        Analisar Qualidade
+    </button>
+    </div>
+
+    <!-- IA -->
+    <div class="card">
+        <h2>Análise de Naturalidade (IA)</h2>
+
+        <div id="analiseIA">
+            Clique em "Analisar" para verificar a naturalidade do texto.
+        </div>
+
+        <div class="actions">
+            <button onclick="analisarIA()">Analisar</button>
+            <button onclick="humanizarTexto()">Humanizar automaticamente</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+
+</body>
+</html>
