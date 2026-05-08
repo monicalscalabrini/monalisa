@@ -562,7 +562,7 @@ body {
 /* ===== FUNDO COM IMAGEM ===== */
 
 .login-page {
-    background: url("../backlogin.png") no-repeat center top;
+   background: url("backlogin.png") no-repeat center top;
     background-size: cover;
     min-height: 100vh;
 }
