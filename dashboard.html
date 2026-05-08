@@ -9,15 +9,6 @@
 
 <body>
 
-<!-- 🔒 PROTEÇÃO -->
-<script>
-const usuario = JSON.parse(localStorage.getItem("usuario") || "null");
-
-if (!usuario || !usuario.logado) {
-  window.location.href = "login.html";
-}
-</script>
-
 <header class="navbar">
     <div class="logo">Monalisa AI</div>
 
