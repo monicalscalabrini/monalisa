@@ -618,7 +618,7 @@ body {
 
 /* ===== CORREÇÃO FINAL BACKGROUND LOGIN ===== */
 .login-page {
-  background-image: url("../backlogin.png");
+  background-image: url("backlogin.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
